@@ -1,0 +1,79 @@
+[
+  {
+    "title": "Gorąco polecam film!",
+    "description": "Obejrzałem już dwa razy, na prawdę wciąga, zastanawiam się czy nie obejrzeć 3-raz. Scenariusz i reżyseria na prawdę na wysokim poziomie.",
+    "rating": 5,
+    "movie_id": 5,
+    "user_id": 3
+  },
+  {
+    "title": "Bardzo ciekawy film",
+    "description": "Na prawdę wciąga, ilość efektów specjalnych i zwrotów akcji jest na prawdę ogromna, polecam.",
+    "rating": 4.5,
+    "movie_id": 5,
+    "user_id": 5
+  },
+  {
+    "title": "Może być",
+    "description": "Film w porządku, lecz widziałem lepsze. Liczyłem, że będzie bardziej związany z serią książek.",
+    "rating": 3.5,
+    "movie_id": 5,
+    "user_id": 8
+  },
+  {
+    "title": "Gorąco polecam",
+    "description": "Ciekawy, główna rola odegrana bardzo dobrze, z przyjemnością się ogląda.",
+    "rating": 5,
+    "movie_id": 2,
+    "user_id": 3
+  },
+  {
+    "title": "Bardzo nudny",
+    "description": "Film bardzo nudny, ciągnie się strasznie, nie polecam.",
+    "rating": 1.5,
+    "movie_id": 10,
+    "user_id": 5
+  },
+  {
+    "title": "Dobrze nakręcony horror",
+    "description": "Film klasyk, każdy go na pewno zna. Ma już tyle lat, a nadal można go oglądać i ogladądać po kilka razy.",
+    "rating": 4.5,
+    "movie_id": 9,
+    "user_id": 3
+  },
+  {
+    "title": "Okej, ale nic specjalnego",
+    "description": "Film raczej okej, jest kilka ciekawicyh zwrotów akcji, można oglądnąć.",
+    "rating": 3.5,
+    "movie_id": 11,
+    "user_id": 2
+  },
+  {
+    "title": "Film dla całej rodziny",
+    "description": "Film nadaje się do oglądnięcia z całą rodziną w sobotni wieczór, bardzo dobra reżyseria.",
+    "rating": 4,
+    "movie_id": 7,
+    "user_id": 7
+  },
+  {
+    "title": "Gorąco polecam",
+    "description": "Godny polecenia, bardzo szybko zleciał mi czas podczas jego oglądania.",
+    "rating": 4,
+    "movie_id": 21,
+    "user_id": 7
+  },
+  {
+    "title": "Gorąco polecam",
+    "description": "Godny polecenia, bardzo szybko zleciał mi czas podczas jego oglądania.",
+    "rating": 4,
+    "movie_id": 24,
+    "user_id": 9
+  },
+  {
+    "title": "Nawet nie najgorzej",
+    "description": "Spodziewałem się czegoś lepszego, lecz trzeba lubić to co jest.",
+    "rating": 3.5,
+    "movie_id": 17,
+    "user_id": 9
+  }
+]

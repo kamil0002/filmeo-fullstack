@@ -1,0 +1,14 @@
+[
+  {"name": "Akcja"},
+  {"name": "Thriller"},
+  {"name": "Horror"},
+  {"name": "Fantasy"},
+  {"name": "Sci-Fi"},
+  {"name": "Przygodowy"},
+  {"name": "Dramat"},
+  {"name": "Kryminalny"},
+  {"name": "Animowany"},
+  {"name": "Wojenny"},
+  {"name": "Romans"},
+  {"name": "Komedia"}
+]

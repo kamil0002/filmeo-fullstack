@@ -1,0 +1,92 @@
+[
+  {
+    "name": "Administrator",
+    "surname": "Unknown",
+    "address": "Rzeszów, ul. Piłsudskiego 4A",
+    "birth_date": "2000-03-04",
+    "email": "kamil@example.com",
+    "password": "Admin123/",
+    "role": "administrator"
+  },
+  {
+    "name": "Ryszard",
+    "surname": "Ogonowski",
+    "address": "Poznań, ul. Siemiańskiego 3",
+    "birth_date": "2000-05-03",
+    "email": "ryszard@example.com",
+    "password": "Test123.",
+    "role": "user"
+  },
+  {
+    "name": "Adam",
+    "surname": "Kowalski",
+    "address": "Warszawa, al. Powstaców Warszawy 8C",
+    "birth_date": "1997-11-11",
+    "email": "adam@example.com",
+    "password": "Test123.",
+    "role": "user"
+  },
+  {
+    "name": "Patryk",
+    "surname": "Pogorzelski",
+    "address": "Rzeszów, ul. Władyjowska 6",
+    "birth_date": "2001-08-02",
+    "email": "patryk@example.com",
+    "password": "Test123.",
+    "role": "moderator"
+  },
+  {
+    "name": "Laura",
+    "surname": "Pakiewicz",
+    "address": "Ropczyce ul. Gardy 4",
+    "birth_date": "2001-07-02",
+    "email": "laura@example.com",
+    "password": "Test123.",
+    "role": "moderator"
+  },
+  {
+    "name": "Logan",
+    "surname": "Hawlett",
+    "address": "Londyn",
+    "birth_date": "1993-04-11",
+    "email": "logan@example.com",
+    "password": "Test123.",
+    "role": "user"
+  },
+  {
+    "name": "Agnieszka",
+    "surname": "Góra",
+    "address": "Sędziszów Młp. ul. Siemiańskiego 3/A",
+    "birth_date": "2009-04-08",
+    "email": "agnieszka@example.com",
+    "password": "Test123.",
+    "role": "user"
+  },
+  {
+    "name": "Franek",
+    "surname": "Zakościelny",
+    "address": "Rzeszów ul. Krakowska 9/4",
+    "birth_date": "1995-01-30",
+    "email": "franek@example.com",
+    "password": "Test123.",
+    "role": "user"
+  },
+  {
+    "name": "Wojciech",
+    "surname": "Wymysłowski",
+    "address": "Rzeszów aleja Piłsudskiego 3",
+    "birth_date": "1999-12-21",
+    "email": "wojciech@example.com",
+    "password": "Test123.",
+    "role": "user"
+  },
+  {
+    "name": "Damian",
+    "surname": "Zakościelny",
+    "address": "Warszawa, wilanów 3/4A",
+    "birth_date": "1994-03-24",
+    "email": "damian@example.com",
+    "password": "Test123.",
+    "role": "user"
+  }
+]
