@@ -35,7 +35,7 @@ const UserStats = () => {
     ]);
 
     //* Setters
-    setMyBaseData(baseData.data);
+    setMyBaseData(baseData.data.data);
     setMyFavouriteGenres(favouriteGenres.data.data.slice(0, 6));
     setMyLastSpendings(lastWeekSpendings.data.data[0]);
     setRentalsNumber(lastWeekRentalsNumber.data.data[0]);

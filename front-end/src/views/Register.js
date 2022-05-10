@@ -14,6 +14,7 @@ import clearAsyncMessages from 'utils/clearAsyncMessages';
 import { useDispatch } from 'react-redux';
 import { setUser } from 'slices/authSlice';
 import Alert from 'components/Alert/Alert';
+import userAge from 'utils/userAge';
 
 const Register = () => {
   const [errMessage, setErrMessage] = useState(null);
@@ -35,8 +36,8 @@ const Register = () => {
         throw new Error('Hasła nie pasują do siebie!');
       }
 
-      if (new Date(data.birth_date).getTime() > Date.now()) {
-        throw new Error('Podaj poprawną datę urodzenia!');
+      if (userAge(data.birth_date) < 12) {
+        throw new Error('Rejestracja tylko dla użytkowników od 12 roku życia!');
       }
       setProcessing(true);
       await axios.get('/sanctum/csrf-cookie');

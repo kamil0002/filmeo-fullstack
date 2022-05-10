@@ -5,8 +5,6 @@ namespace App\Http\Controllers\API\v1;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\API\v1\ErrorController;
-use Error;
-use Monolog\ErrorHandler;
 
 class AdminController extends Controller
 {

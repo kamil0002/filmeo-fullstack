@@ -88,6 +88,7 @@ const ReviewCard = ({
             marginTop={1}
             marginBottom={10}
             align={'center'}
+            sx={{ wordBreak: 'break-word' }}
           >
             {description}
           </Typography>

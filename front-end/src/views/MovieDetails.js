@@ -36,7 +36,6 @@ const MovieDetails = () => {
     try {
       setSpinnerVisible(true);
       const movie = await axios.get(`api/v1/movies/slug/${params.slug}`);
-      console.log(movie);
       if (movie.data.status !== 'success') {
         throw new Error(movie.data.message);
       }
@@ -103,6 +102,7 @@ const MovieDetails = () => {
         <>
           {errMessage && <Alert>{errMessage}</Alert>}
           <Header
+            user={user}
             rentMovieFn={rentMovie}
             title={movie.title}
             time={+movie.running_time}
@@ -244,7 +244,7 @@ const MovieDetails = () => {
                 src={`http://127.0.0.1:8000/images/movies/${movie.poster}`}
                 alt="movie-poster"
               />
-              {ownedByUser ? (
+              {ownedByUser || user?.role === 'administrator' ? (
                 <StyledButton disabled variant="contained">
                   Wypożycz
                 </StyledButton>

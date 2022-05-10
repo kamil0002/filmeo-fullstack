@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\API\v1;
 
 use Illuminate\Http\Request;
-use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 
@@ -15,13 +14,14 @@ use Illuminate\Support\Facades\Validator;
 
 class AuthController extends Controller
 {
-    
+
     /**
      * registerRules
      *
      * @return array walidacja dla rejestracji
      */
-    private function registerRules() {
+    private function registerRules()
+    {
         return [
             'name' => 'required|string',
             'surname' => 'required|string',
@@ -32,20 +32,21 @@ class AuthController extends Controller
             'password' => 'required|string|confirmed'
         ];
     }
-    
+
     /**
      * updatePasswordRules
      *
      * @return array walidacja dla aktualizacji hasła
      */
-    private function updatePasswordRules() {
+    private function updatePasswordRules()
+    {
         return [
             'old_password' => 'required|string',
             'password' => 'required|string|confirmed'
         ];
     }
 
-    
+
     /**
      * register
      *
@@ -57,15 +58,14 @@ class AuthController extends Controller
 
         $validator = Validator::make($request->all(), $this->registerRules());
 
-        if($validator->fails()) {
-            // return response()->json($validator->errors(), 400);
+        if ($validator->fails()) {
             return ErrorController::handleError($validator->errors(), 400);
         }
 
         //* Check if user is banned
 
-        // $request['role'] = $request['role'] ?? 'user';
-        
+
+
         $request['role'] = 'user';
 
 
@@ -85,7 +85,7 @@ class AuthController extends Controller
 
         // TODO ENABLE EMAIL
         //* Send Welcome Mail To a User
-        Mail::to($request['email'])->send(new WelcomeMail($request['name']));
+        //Mail::to($request['email'])->send(new WelcomeMail($request['name']));
 
         return response([
             'status' => 'success',
@@ -93,10 +93,10 @@ class AuthController extends Controller
             'data' => [
                 $user
             ]
-        ],201);
+        ], 201);
     }
 
-    
+
     /**
      * login
      *
@@ -113,16 +113,16 @@ class AuthController extends Controller
             'password.required' => 'Aby się zalogować podaj e-mail oraz hasło'
         ]);
 
-        
+
         //* Check Email
         $user = User::where('email', $fields['email'])->first();
 
         //* Check Password
         if (!$user || !Hash::check($fields['password'], $user->password)) {
-            return ErrorController::handleError('Niepoprawny e-mail lub hasło',401);
+            return ErrorController::handleError('Niepoprawny e-mail lub hasło', 401);
         }
-        if($user?->banned) {
-            return ErrorController::handleError('Przykro nam, lecz zostałeś zbanowany. W celu wyjaśnienia przyczyny skontaktuj się z '.env('MAIL_FROM_ADDRESS').'.', 401);
+        if ($user?->banned) {
+            return ErrorController::handleError('Przykro nam, lecz zostałeś zbanowany. W celu wyjaśnienia przyczyny skontaktuj się z ' . env('MAIL_FROM_ADDRESS') . '.', 401);
         }
 
 
@@ -134,27 +134,29 @@ class AuthController extends Controller
             'data' => [
                 $user
             ]
-        ],201);
+        ], 201);
     }
 
-    public function isLoggedIn() {
-        if(Auth::check()) {
+    public function isLoggedIn()
+    {
+        if (Auth::check()) {
             $user = auth()->user();
             return response($user);
         }
 
         return response([
-        'message' => "Użytkownik nie jest zalogowany",
+            'message' => "Użytkownik nie jest zalogowany",
         ], 401);
     }
-    
+
     /**
      * logout
      *
      * @return json wiadomość o akcji
      */
-    public function logout() {
-        
+    public function logout()
+    {
+
         auth()->user()->tokens()->delete();
 
         return response()->json([
@@ -163,27 +165,27 @@ class AuthController extends Controller
         ], 200);
     }
 
-    
+
     /**
      * updateMyPassword
      *
      * @param  mixed $request
      * @return json status akcji 
      */
-    public function updateMyPassword(Request $request) {
+    public function updateMyPassword(Request $request)
+    {
 
         $user = auth()->user();
 
         //* Check if old password is correct
         if (!$user || !Hash::check($request['old_password'], $user->password)) {
-            // return response(['message'=>'Bledne stare haslo']);
             return ErrorController::handleError('Niepoprawne stare hasło.', 401);
         }
 
 
         $validator = Validator::make($request->all(), $this->updatePasswordRules());
 
-        if($validator->fails()) {
+        if ($validator->fails()) {
             return ErrorController::handleError('Hasła nie pasują do siebie!', 400);
         }
 
@@ -195,5 +197,4 @@ class AuthController extends Controller
             'status' => 'success'
         ]);
     }
-
 }

@@ -10,6 +10,7 @@ import axios from 'utils/axios';
 import Alert from 'components/Alert/Alert';
 import { updateUser } from 'slices/authSlice';
 import clearAsyncMessages from 'utils/clearAsyncMessages';
+import userAge from 'utils/userAge';
 
 const UserSettings = () => {
   const [errMessage, setErrMessage] = useState(null);
@@ -48,7 +49,7 @@ const UserSettings = () => {
 
   const changeUserData = async (data) => {
     try {
-      if (new Date(data.birth_date).getTime() > Date.now()) {
+      if (userAge(data.birth_date) < 12) {
         throw new Error('Podaj poprawną datę urodzenia!');
       }
       setProcessingUserData(true);

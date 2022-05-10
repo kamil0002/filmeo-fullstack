@@ -20,6 +20,7 @@ const MovieDetailsHeader = ({
   poster,
   processing,
   ownedByUser,
+  user,
 }) => {
   return (
     <Wrapper>
@@ -46,7 +47,7 @@ const MovieDetailsHeader = ({
           </Typography>
         </MovieCost>
         <HeaderAction>
-          {ownedByUser ? (
+          {ownedByUser || user?.role === 'administrator' ? (
             <HeaderButton disabled variant="contained">
               Zamów teraz!
             </HeaderButton>
@@ -233,4 +234,5 @@ MovieDetailsHeader.propTypes = {
   time: PropTypes.number.isRequired,
   processing: PropTypes.bool,
   ownedByUser: PropTypes.bool,
+  user: PropTypes.object,
 };

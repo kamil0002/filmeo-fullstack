@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import AdminPanel from './dashboardViews/AdminPanel';
 import UserMovies from './dashboardViews/UserMovies';
 import UserReviews from './dashboardViews/UserReviews';
@@ -11,7 +12,11 @@ import clearAsyncMessages from 'utils/clearAsyncMessages';
 import Alert from 'components/Alert/Alert';
 
 const Dashboard = () => {
-  const [currentView, setCurrentView] = useState('movies');
+  const user = useSelector((state) => state.auth.user);
+
+  const [currentView, setCurrentView] = useState(
+    user?.role === 'administrator' ? 'admin' : 'movies'
+  );
   const { search } = useLocation();
   const [errMessage, setErrMessage] = useState(null);
   const [successMessage, setSuccessMessage] = useState(null);

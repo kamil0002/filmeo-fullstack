@@ -41,6 +41,10 @@ const AddReview = () => {
         rating: +ratingValue,
       });
 
+      if (review.data.status !== 'success') {
+        throw new Error(review.data.message);
+      }
+
       setSuccessMessage('Opinia została dodana!');
       reset();
       setRatingValue(0);
@@ -134,7 +138,7 @@ const AddReview = () => {
             <Rating
               name="movie-rating"
               value={ratingValue}
-              precision={0.5}
+              precision={1}
               sx={{ marginLeft: -0.5 }}
               onChange={(event, newValue) => {
                 setRatingValue(newValue);
